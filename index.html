@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>Zaw Min Tun | Software Developer</title>
 
   <!-- Simple Sky-Blue Theme Portfolio Template -->
   <style>
@@ -163,6 +163,51 @@
       background: #039be5;
     }
 
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .skill-tag {
+      background: #e1f5fe;
+      color: #0277bd;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .skill-category {
+      margin-top: 20px;
+    }
+
+    .skill-category h4 {
+      color: #555;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .contact-links a {
+      color: #0277bd;
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
     .modal-success {
       text-align: center;
       color: #2e7d32;
@@ -176,11 +221,12 @@
 
   <header>
     <h1>Zaw Min Tun</h1>
-    <p>SoftwareDeveloper</p>
+    <p>Software Developer</p>
   </header>
 
   <nav>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -194,6 +240,43 @@
         I am passionate about building applications which can help the users in their daily tasks to have a better experience. 
         I do my best to be a good team member and I always try to learn new things to stay updated with the latest trends in the industry. That's why I took a career break in 2025 to upskill myself in some latest technologies.
       </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+      <div class="skill-category">
+        <h4>Languages</h4>
+        <div class="skills-grid">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Frameworks &amp; Libraries</h4>
+        <div class="skills-grid">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Django</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Cloud &amp; DevOps</h4>
+        <div class="skills-grid">
+          <span class="skill-tag">AWS (EC2, S3, RDS, CloudFront)</span>
+          <span class="skill-tag">Azure (Functions, SQL, Static Apps)</span>
+          <span class="skill-tag">CI/CD</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Databases</h4>
+        <div class="skills-grid">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Azure SQL</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -225,7 +308,7 @@
       <h3>Smart Desk</h3>
       <p>A website to help the user in reading and organising what he reads. 
         Vocabularies and flashcards will be automatically generated based on the contents that the user reads. 
-        Recommendations will be provided timely based on the user's ongoinng reading.
+        Recommendations will be provided timely based on the user's ongoing reading.
         It is a project to be submitted for academic purposes at Yoobee College.</p>
       <br/>
       <h4>Responsibilities</h4>
@@ -249,7 +332,12 @@
   <section id="contact">
     <h2>Contact</h2>
     <div class="card">
-      <p>Email: mg.zawmintun@gmail.com</p>
+      <p>I'm open to new opportunities in Auckland, New Zealand. Feel free to reach out!</p>
+      <div class="contact-links">
+        <span>📧 <a href="mailto:mg.zawmintun@gmail.com">mg.zawmintun@gmail.com</a></span>
+        <span>💼 <a href="https://www.linkedin.com/in/zaw-min-tun-b701a848/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+        <span>🐙 <a href="https://github.com/ZawMT" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+      </div>
     </div>
   </section>
 
