@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zaw Min Tun | C# Developer</title>
+
+  <!-- Simple Sky-Blue Theme Portfolio Template -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4fbff;
+      color: #1a2a33;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #87ceeb, #4fc3f7);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 16px;
+    }
+
+    nav {
+      background: #e1f5fe;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0277bd;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #0288d1;
+      margin-bottom: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    footer {
+      background: #87ceeb;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: #4fc3f7;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #039be5;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 380px;
+      width: 90%;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .modal h3 {
+      margin-bottom: 10px;
+      color: #0288d1;
+    }
+
+    .modal p {
+      margin-bottom: 16px;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .modal input[type="email"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #b0d8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 14px;
+      outline: none;
+    }
+
+    .modal input[type="email"]:focus {
+      border-color: #4fc3f7;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .btn-cancel {
+      padding: 9px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #e0e0e0;
+      color: #333;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .btn-submit {
+      padding: 9px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #4fc3f7;
+      color: white;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+      background: #039be5;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .skill-tag {
+      background: #e1f5fe;
+      color: #0277bd;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .skill-category {
+      margin-top: 20px;
+    }
+
+    .skill-category h4 {
+      color: #555;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .contact-links a {
+      color: #0277bd;
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    .modal-success {
+      text-align: center;
+      color: #2e7d32;
+      font-weight: bold;
+      margin-top: 8px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="../Photo.png" alt="Zaw Min Tun" />
+    <h1>Zaw Min Tun</h1>
+    <p>Software Developer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        I started working as a software developer in 2004, and have experience in various programming languages, frameworks, and technologies. 
+        I am passionate about building applications which can truly help the users in their tasks to provide efficiency and have a better experience. 
+        I strive to be a good team member and I always try to learn new things to stay updated with the latest trends in the industry. 
+        I took a career break in 2025 and attended Yoobee College (Auckland) to pursue the degree of Master of Software Engineering to upskill myself in latest technologies.
+        Currently, I am doing intern at HauHau Research, working on a laboratory management system.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+      <div class="skill-category">
+        <h4>Languages</h4>
+        <div class="skills-grid">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">C#</span>
+          <span class="skill-tag">C / C++</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">VB</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Frameworks &amp; Libraries</h4>
+        <div class="skills-grid">
+          <span class="skill-tag">WPF</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">AngularJS</span>
+          <span class="skill-tag">Laravel</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Application Servers</h4>
+        <div class="skills-grid">
+          <span class="skill-tag">Django</span>
+          <span class="skill-tag">JBoss</span>
+          <span class="skill-tag">GlassFish</span>
+          <span class="skill-tag">IIS</span>
+          <span class="skill-tag">Apache</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Cloud &amp; DevOps</h4>
+        <div class="skills-grid">
+          <span class="skill-tag">AWS (Lambda, EC2, S3, RDS, CloudFront)</span>
+          <span class="skill-tag">Azure (Functions, SQL, Static Apps)</span>
+          <span class="skill-tag">CI/CD</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Databases</h4>
+        <div class="skills-grid">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Microsoft / Azure SQL</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Oracle</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+      <h3>LabJOMS (Laboratory Job Ordering and Management System)</h3>
+      <p>A website to streamline the process of managing laboratory facilities and activities.</p>
+      <br/>
+      <h4>Responsibilities</h4>
+      <ul>
+        <li>Application Design and Architecture</li>
+        <li>Development - PHP/Laravel</li>
+        <li>Database Design - PostgreSQL</li>
+        <li>Implementation and DevOps - Hosted in AWS (EC2), Apache</li>
+      </ul>
+      <br/>
+      <h4>Achievements</h4>
+      <ul>
+        <li>I am currently working on this project.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Car Rental System</h3>
+      <p>A peer-to-peer car rental system which is submitted for academic purposes at Yoobee College.</p>
+      <br/>
+      <h4>Responsibilities</h4>
+      <ul>
+        <li>Application Design and Architecture</li>
+        <li>Frontend Development - Azure Static App in ReactJS</li>
+        <li>Backend Development - Azure Function App in Python</li>
+        <li>Database Design - Azure SQL</li>
+        <li>Implementation and DevOps</li>
+      </ul>
+      <br/>
+      <h4>Achievements</h4>
+      <ul>
+        <li>Launched the application successfully on Azure Cloud for the academic submission.</li>
+      </ul>
+
+      <button class="btn" onclick="openModal('Car Rental System')">View on GitHub</button>
+    </div>
+
+    <div class="card">
+      <h3>Smart Desk</h3>
+      <p>A website to help the user in reading and organising what he reads. 
+        Vocabularies and flashcards will be automatically generated based on the contents that the user reads. 
+        Recommendations will be provided timely based on the user's ongoing reading.
+        It is a project to be submitted for academic purposes at Yoobee College.</p>
+      <br/>
+      <h4>Responsibilities</h4>
+      <ul>
+        <li>Application Design and Architecture</li>
+        <li>Frontend Development - React Typescript - AWS S3 &amp; CloudFront</li>
+        <li>Backend Development - Django services in Python hosted on AWS EC2</li>
+        <li>Database Design - PostgreSQL on AWS RDS</li>
+        <li>Implementation and DevOps</li>
+      </ul>
+      <br/>
+      <h4>Achievements</h4>
+      <ul>
+        <li>Launched the application successfully on AWS Cloud</li>
+      </ul>
+
+      <button class="btn" onclick="openModal('Smart Desk')">View on GitHub</button>
+    </div>
+
+
+    <div class="card">
+      <h3>Resource Management System (Airport)</h3>
+      <p>
+        A system to manage resources at an airport, including fixed resources such as check-in counters, waiting-rooms, etc. and human resources.
+        The system will help in optimizing to plan the resource allocation improving operational usage and efficiency.
+      </p>
+      <br/>
+      <h4>Responsibilities</h4>
+      <ul>
+        <li>Frontend Development - C#, C#(WPF), VB, AngularJS</li>
+        <li>Backend Development - C/C++, Java</li>
+        <li>Database in use - Oracle, MS SQL Server</li>
+        <li>Application Servers in use - JBoss, IIS, Linux</li>
+      </ul>
+      <br/>
+      <h4>Achievements</h4>
+      <ul>
+        <li>Successfully designed, implemented, and supported resource management operations across multiple airports as part of a development team.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+        <h3>Requirement Management Tool</h3>
+        <p>
+          A system to manage and track software requirements throughout the development lifecycle — from initial requirement gathering to final implementation and testing. 
+          The tool will help in ensuring that all requirements are properly documented, prioritized, implemented, tracked, and verified, improving overall project efficiency and quality. 
+        </p>
+        <br/>
+        <h4>Responsibilities</h4>
+        <ul>
+          <li>Frontend Development - C#(WPF / MEF)</li>
+          <li>Backend Development - Python/Django/FastAPI</li>
+          <li>Database in use - PostgreSQL, MongoDB, GraphQL</li>
+          <li>Environment - Docker, AWS</li>
+        </ul>
+        <br/>
+        <h4>Achievements</h4>
+        <ul>
+          <li>Successfully designed, implemented, documented,and supported internal testing.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Firmware / Device Testing Tools</h3>
+        <p>
+          Creating DLLs and applications to test, verify, and validate the devices such as headsets, earbuds, PCB, etc. through HID, UART, and custom API.
+        </p>
+        <br/>
+        <h4>Responsibilities</h4>
+        <ul>
+          <li>Languages: C++, C#</li>
+        </ul>
+        <br/>
+        <h4>Achievements</h4>
+        <ul>
+          <li>Successfully developed libraries and tools. Testing and user support.</li>
+        </ul>
+      </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>I'm open to new opportunities in New Zealand. Feel free to reach out!</p>
+      <div class="contact-links">
+        <span>📧 <a href="mailto:mg.zawmintun@gmail.com">mg.zawmintun@gmail.com</a></span>
+        <span>💼 <a href="https://www.linkedin.com/in/zaw-min-tun-b701a848/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
+        <span>🐙 <a href="https://github.com/ZawMT" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+        <span>📄 <a href="Resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a></span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Zaw Min Tun — Portfolio</p>
+  </footer>
+
+
+  <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+    <div class="modal">
+      <h3>Request Access</h3>
+      <p id="modalDesc">Enter your email to request access to this repository.</p>
+      <input type="email" id="emailInput" placeholder="your@email.com" />
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+        <button class="btn-submit" onclick="submitRequest()">Request Access</button>
+      </div>
+      <p class="modal-success" id="modalSuccess">Request sent! I'll get back to you soon.</p>
+    </div>
+  </div>
+
+  <script>
+    let currentProject = '';
+
+    function openModal(project) {
+      currentProject = project;
+      document.getElementById('modalDesc').textContent =
+        'Enter your email to request access to the ' + project + ' repository.';
+      document.getElementById('emailInput').value = '';
+      document.getElementById('modalSuccess').style.display = 'none';
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('modalOverlay')) closeModal();
+    }
+
+    const FORMSPREE_ID = 'xdawjjlo';
+
+    async function submitRequest() {
+      const email = document.getElementById('emailInput').value.trim();
+      if (!email || !email.includes('@')) {
+        document.getElementById('emailInput').focus();
+        return;
+      }
+
+      const submitBtn = document.querySelector('.btn-submit');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ email: email, project: currentProject })
+        });
+
+        if (res.ok) {
+          document.getElementById('modalSuccess').style.display = 'block';
+          setTimeout(closeModal, 2000);
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      } catch {
+        alert('Network error. Please try again.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Request Access';
+      }
+    }
+  </script>
+
+</body>
+</html>
