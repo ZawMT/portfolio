@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zaw Min Tun | C# Developer</title>
+  <title>Zaw Min Tun | C# / .NET Developer</title>
+  <meta name="description" content="Zaw Min Tun — Senior Software Developer specialising in C# / .NET and C++, with 20+ years of experience. Based in Auckland, New Zealand." />
 
   <!-- Simple Sky-Blue Theme Portfolio Template -->
   <style>
@@ -14,27 +15,88 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 60px;
+    }
+
     body {
       background: #f4fbff;
       color: #1a2a33;
       line-height: 1.6;
     }
 
+    /* ---------- Header ---------- */
+
     header {
       background: linear-gradient(135deg, #87ceeb, #4fc3f7);
       color: white;
-      padding: 40px 20px;
+      padding: 48px 20px 40px;
       text-align: center;
     }
 
     header img {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid white;
       margin-bottom: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
     }
+
+    header h1 {
+      font-size: 2.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .headline {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 4px;
+    }
+
+    .subline {
+      opacity: 0.95;
+      margin-top: 6px;
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
+    .btn-light {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-light.solid {
+      background: white;
+      color: #0277bd;
+    }
+
+    .btn-light.solid:hover {
+      background: #e1f5fe;
+    }
+
+    .btn-light.ghost {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-light.ghost:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* ---------- Nav ---------- */
 
     nav {
       background: #e1f5fe;
@@ -42,14 +104,23 @@
       text-align: center;
       position: sticky;
       top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
     nav a {
-      margin: 0 15px;
+      display: inline-block;
+      margin: 2px 12px;
       text-decoration: none;
       color: #0277bd;
       font-weight: bold;
     }
+
+    nav a:hover {
+      color: #01579b;
+    }
+
+    /* ---------- Layout ---------- */
 
     section {
       max-width: 900px;
@@ -62,12 +133,21 @@
       margin-bottom: 15px;
     }
 
+    .section-intro {
+      color: #4a5a63;
+      margin-bottom: 5px;
+    }
+
     .card {
       background: white;
-      padding: 20px;
+      padding: 22px;
       margin-top: 15px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .card p + p {
+      margin-top: 10px;
     }
 
     footer {
@@ -80,18 +160,229 @@
 
     .btn {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 14px;
       padding: 10px 16px;
       background: #4fc3f7;
       color: white;
+      border: none;
       border-radius: 8px;
       text-decoration: none;
+      font-size: 0.95rem;
+      cursor: pointer;
       transition: 0.3s;
     }
 
     .btn:hover {
       background: #039be5;
     }
+
+    /* ---------- Skills ---------- */
+
+    .tier {
+      padding: 16px 0;
+      border-bottom: 1px solid #e6f3fa;
+    }
+
+    .tier:first-child {
+      padding-top: 0;
+    }
+
+    .tier:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .tier h3 {
+      font-size: 1rem;
+      color: #1a2a33;
+    }
+
+    .tier-note {
+      font-size: 0.88rem;
+      color: #607080;
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .tier-core .skill-tag {
+      background: #0288d1;
+      color: white;
+      font-size: 0.98rem;
+      padding: 8px 16px;
+    }
+
+    .tier-proficient .skill-tag {
+      background: #e1f5fe;
+      color: #0277bd;
+    }
+
+    .tier-working .skill-tag {
+      background: white;
+      color: #4a6a7a;
+      border: 1px solid #b0d8f0;
+      font-weight: normal;
+    }
+
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 18px 24px;
+    }
+
+    .area h4 {
+      color: #555;
+      margin-bottom: 6px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .area p {
+      font-size: 0.92rem;
+      color: #33444d;
+    }
+
+    .subheading {
+      margin: 28px 0 0;
+      color: #0288d1;
+      font-size: 1.1rem;
+    }
+
+    /* ---------- Credentials ---------- */
+
+    .cred-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 15px;
+    }
+
+    .cred-grid .card {
+      margin-top: 0;
+    }
+
+    .cred-grid h3 {
+      font-size: 1rem;
+      color: #0277bd;
+      margin-bottom: 8px;
+    }
+
+    .cred-grid ul {
+      list-style: none;
+    }
+
+    .cred-grid li {
+      padding: 4px 0;
+      font-size: 0.93rem;
+    }
+
+    .cred-grid li span {
+      display: block;
+      color: #607080;
+      font-size: 0.85rem;
+    }
+
+    /* ---------- Projects ---------- */
+
+    .project h3 {
+      color: #1a2a33;
+    }
+
+    .project-meta {
+      color: #0277bd;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin: 2px 0 10px;
+    }
+
+    .project-meta .sep {
+      color: #9cc9e0;
+      margin: 0 6px;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 12px 0 14px;
+    }
+
+    .tech-tags span {
+      background: #f0f8fc;
+      color: #33607a;
+      border: 1px solid #d3eaf6;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    .project h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .project ul {
+      padding-left: 20px;
+    }
+
+    .project li {
+      margin-bottom: 4px;
+    }
+
+    .other-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 15px;
+    }
+
+    .other-grid .card {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .other-grid .card p {
+      font-size: 0.92rem;
+      flex-grow: 1;
+    }
+
+    .other-grid .btn {
+      align-self: flex-start;
+    }
+
+    /* ---------- Contact ---------- */
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .contact-links a {
+      color: #0277bd;
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- Modal ---------- */
 
     .modal-overlay {
       display: none;
@@ -172,57 +463,27 @@
       background: #039be5;
     }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 12px;
-      margin-top: 15px;
-    }
-
-    .skill-tag {
-      background: #e1f5fe;
-      color: #0277bd;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    .skill-category {
-      margin-top: 20px;
-    }
-
-    .skill-category h4 {
-      color: #555;
-      margin-bottom: 8px;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .contact-links a {
-      color: #0277bd;
-      text-decoration: none;
-    }
-
-    .contact-links a:hover {
-      text-decoration: underline;
-    }
-
     .modal-success {
       text-align: center;
       color: #2e7d32;
       font-weight: bold;
       margin-top: 8px;
       display: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav a {
+        margin: 2px 8px;
+        font-size: 0.92rem;
+      }
+
+      section {
+        padding: 32px 16px;
+      }
     }
   </style>
 </head>
@@ -231,13 +492,19 @@
   <header>
     <img src="../Photo.png" alt="Zaw Min Tun" />
     <h1>Zaw Min Tun</h1>
-    <p>Software Developer</p>
+    <p class="headline">Senior Software Developer — C# / .NET &amp; C++</p>
+    <p class="subline">20+ years in software development · Auckland, New Zealand</p>
+    <div class="header-actions">
+      <a class="btn-light solid" href="Resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
+      <a class="btn-light ghost" href="#contact">Contact Me</a>
+    </div>
   </header>
 
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#recent">Recent Work</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -245,11 +512,18 @@
     <h2>About Me</h2>
     <div class="card">
       <p>
-        I started working as a software developer in 2004, and have experience in various programming languages, frameworks, and technologies. 
-        I am passionate about building applications which can truly help the users in their tasks to provide efficiency and have a better experience. 
-        I strive to be a good team member and I always try to learn new things to stay updated with the latest trends in the industry. 
-        I took a career break in 2025 and attended Yoobee College (Auckland) to pursue the degree of Master of Software Engineering to upskill myself in latest technologies.
-        Currently, I am doing intern at HauHau Research, working on a laboratory management system.
+        I'm a software developer with more than 20 years of experience, specialising in <strong>C# / .NET</strong> desktop
+        and web applications and <strong>C++</strong>. I've built airport resource management systems, device-testing tools,
+        enterprise project management software and financial market data applications.
+      </p>
+      <p>
+        I've worked across the whole lifecycle: analysing requirements with analysts and clients, design, implementation,
+        SIT/UAT, go-live, and long-term production support.
+      </p>
+      <p>
+        In 2025 I took a career break to study for a Master of Software Engineering at Yoobee College, Auckland, to update
+        my skills in cloud and modern web development. I'm currently a Software Engineer Intern at HauHau Research,
+        building a laboratory management system.
       </p>
     </div>
   </section>
@@ -257,184 +531,227 @@
   <section id="skills">
     <h2>Skills</h2>
     <div class="card">
-      <div class="skill-category">
-        <h4>Languages</h4>
-        <div class="skills-grid">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">SQL</span>
+      <div class="tier tier-core">
+        <h3>Core expertise</h3>
+        <p class="tier-note">My main languages, used daily over many years and many production systems.</p>
+        <div class="tags">
           <span class="skill-tag">C#</span>
-          <span class="skill-tag">C / C++</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">VB</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>Frameworks &amp; Libraries</h4>
-        <div class="skills-grid">
+          <span class="skill-tag">.NET</span>
           <span class="skill-tag">WPF</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">AngularJS</span>
-          <span class="skill-tag">Laravel</span>
+          <span class="skill-tag">C / C++</span>
         </div>
       </div>
-      <div class="skill-category">
-        <h4>Application Servers</h4>
-        <div class="skills-grid">
-          <span class="skill-tag">Django</span>
-          <span class="skill-tag">JBoss</span>
-          <span class="skill-tag">GlassFish</span>
-          <span class="skill-tag">IIS</span>
-          <span class="skill-tag">Apache</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>Cloud &amp; DevOps</h4>
-        <div class="skills-grid">
-          <span class="skill-tag">AWS (Lambda, EC2, S3, RDS, CloudFront)</span>
-          <span class="skill-tag">Azure (Functions, SQL, Static Apps)</span>
-          <span class="skill-tag">CI/CD</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>Databases</h4>
-        <div class="skills-grid">
+      <div class="tier tier-proficient">
+        <h3>Proficient</h3>
+        <p class="tier-note">Used comfortably in professional and recent projects.</p>
+        <div class="tags">
+          <span class="skill-tag">ASP.NET</span>
+          <span class="skill-tag">MEF</span>
+          <span class="skill-tag">Python (Django, FastAPI)</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">MS SQL Server</span>
           <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">Microsoft / Azure SQL</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">MySQL</span>
           <span class="skill-tag">Oracle</span>
         </div>
+      </div>
+      <div class="tier tier-working">
+        <h3>Working experience</h3>
+        <p class="tier-note">Used in real projects. I can pick these up and be productive quickly.</p>
+        <div class="tags">
+          <span class="skill-tag">VB / VB6</span>
+          <span class="skill-tag">PHP (Laravel)</span>
+          <span class="skill-tag">JavaScript / TypeScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">AngularJS</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">MySQL</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="subheading">Platforms &amp; tools</h3>
+    <div class="card">
+      <div class="area-grid">
+        <div class="area">
+          <h4>Desktop &amp; devices</h4>
+          <p>WPF, MEF, Windows services, C++ DLLs, HID, UART</p>
+        </div>
+        <div class="area">
+          <h4>Web &amp; backend</h4>
+          <p>ASP.NET, Django, FastAPI, GraphQL, Laravel, HTML/CSS, jQuery</p>
+        </div>
+        <div class="area">
+          <h4>Databases &amp; data</h4>
+          <p>MS SQL Server, Azure SQL, PostgreSQL, Oracle, DB2, MongoDB, MySQL, SQLite, XML/XSLT, JSON</p>
+        </div>
+        <div class="area">
+          <h4>Cloud &amp; DevOps</h4>
+          <p>AWS (EC2, S3, RDS, Lambda, CloudFront), Azure (Functions, Static Web Apps), Docker, Git, CI/CD</p>
+        </div>
+        <div class="area">
+          <h4>Servers &amp; messaging</h4>
+          <p>IIS, JBoss, GlassFish, Apache, ActiveMQ, IBM MQ · Windows &amp; Linux</p>
+        </div>
+        <div class="area">
+          <h4>Testing</h4>
+          <p>TDD, JUnit, PyTest, SIT / UAT</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="subheading">Certifications &amp; education</h3>
+    <div class="cred-grid" style="margin-top: 15px;">
+      <div class="card">
+        <h3>Certifications</h3>
+        <ul>
+          <li>MCPD<span>Microsoft Certified Professional Developer</span></li>
+          <li>MCTS<span>Microsoft Certified Technology Specialist</span></li>
+          <li>OCA<span>Oracle Certified Associate, Java SE 8 Programmer</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Education</h3>
+        <ul>
+          <li>Master of Software Engineering<span>Yoobee College, Auckland (in progress)</span></li>
+          <li>Master of Computer Science<span>University of Computer Studies, Mandalay</span></li>
+          <li>Bachelor of Computer Science<span>University of Computer Studies, Mandalay</span></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
+  <section id="experience">
+    <h2>C# &amp; C++ Experience</h2>
+    <p class="section-intro">Selected professional projects, most recent first.</p>
 
-    <div class="card">
-      <h3>LabJOMS (Laboratory Job Ordering and Management System)</h3>
-      <p>A website to streamline the process of managing laboratory facilities and activities.</p>
-      <br/>
-      <h4>Responsibilities</h4>
-      <ul>
-        <li>Application Design and Architecture</li>
-        <li>Development - PHP/Laravel</li>
-        <li>Database Design - PostgreSQL</li>
-        <li>Implementation and DevOps - Hosted in AWS (EC2), Apache</li>
-      </ul>
-      <br/>
-      <h4>Achievements</h4>
-      <ul>
-        <li>I am currently working on this project.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Car Rental System</h3>
-      <p>A peer-to-peer car rental system which is submitted for academic purposes at Yoobee College.</p>
-      <br/>
-      <h4>Responsibilities</h4>
-      <ul>
-        <li>Application Design and Architecture</li>
-        <li>Frontend Development - Azure Static App in ReactJS</li>
-        <li>Backend Development - Azure Function App in Python</li>
-        <li>Database Design - Azure SQL</li>
-        <li>Implementation and DevOps</li>
-      </ul>
-      <br/>
-      <h4>Achievements</h4>
-      <ul>
-        <li>Launched the application successfully on Azure Cloud for the academic submission.</li>
-      </ul>
-
-      <button class="btn" onclick="openModal('Car Rental System')">View on GitHub</button>
-    </div>
-
-    <div class="card">
-      <h3>Smart Desk</h3>
-      <p>A website to help the user in reading and organising what he reads. 
-        Vocabularies and flashcards will be automatically generated based on the contents that the user reads. 
-        Recommendations will be provided timely based on the user's ongoing reading.
-        It is a project to be submitted for academic purposes at Yoobee College.</p>
-      <br/>
-      <h4>Responsibilities</h4>
-      <ul>
-        <li>Application Design and Architecture</li>
-        <li>Frontend Development - React Typescript - AWS S3 &amp; CloudFront</li>
-        <li>Backend Development - Django services in Python hosted on AWS EC2</li>
-        <li>Database Design - PostgreSQL on AWS RDS</li>
-        <li>Implementation and DevOps</li>
-      </ul>
-      <br/>
-      <h4>Achievements</h4>
-      <ul>
-        <li>Launched the application successfully on AWS Cloud</li>
-      </ul>
-
-      <button class="btn" onclick="openModal('Smart Desk')">View on GitHub</button>
-    </div>
-
-
-    <div class="card">
-      <h3>Resource Management System (Airport)</h3>
+    <div class="card project">
+      <h3>Project &amp; Requirement Management System</h3>
+      <p class="project-meta">Merry Electronics (Singapore)<span class="sep">|</span>2022 – 2025<span class="sep">|</span>Dev team 5+</p>
       <p>
-        A system to manage resources at an airport, including fixed resources such as check-in counters, waiting-rooms, etc. and human resources.
-        The system will help in optimizing to plan the resource allocation improving operational usage and efficiency.
+        An application for managing the organisation's projects, from administration (projects, customers, users,
+        memberships) to operations: defining and updating requirements, releasing information, planning quality
+        assurance and running tests.
       </p>
-      <br/>
-      <h4>Responsibilities</h4>
+      <div class="tech-tags">
+        <span>C#</span><span>WPF</span><span>MEF</span><span>Python</span><span>FastAPI</span><span>Django</span>
+        <span>PostgreSQL</span><span>MongoDB</span><span>GraphQL</span><span>Docker</span><span>AWS</span>
+      </div>
+      <h4>Key contributions</h4>
       <ul>
-        <li>Frontend Development - C#, C#(WPF), VB, AngularJS</li>
-        <li>Backend Development - C/C++, Java</li>
-        <li>Database in use - Oracle, MS SQL Server</li>
-        <li>Application Servers in use - JBoss, IIS, Linux</li>
-      </ul>
-      <br/>
-      <h4>Achievements</h4>
-      <ul>
-        <li>Successfully designed, implemented, and supported resource management operations across multiple airports as part of a development team.</li>
+        <li>Developed the C# / WPF desktop client, using MEF for a modular architecture.</li>
+        <li>Built Python backend services (FastAPI / Django) on PostgreSQL, MongoDB and GraphQL, running in Docker on AWS.</li>
+        <li>Analysed requirements, wrote the system documentation and supported internal testing.</li>
+        <li>Provided production and maintenance support.</li>
       </ul>
     </div>
 
-    <div class="card">
-        <h3>Requirement Management Tool</h3>
-        <p>
-          A system to manage and track software requirements throughout the development lifecycle — from initial requirement gathering to final implementation and testing. 
-          The tool will help in ensuring that all requirements are properly documented, prioritized, implemented, tracked, and verified, improving overall project efficiency and quality. 
-        </p>
-        <br/>
-        <h4>Responsibilities</h4>
-        <ul>
-          <li>Frontend Development - C#(WPF / MEF)</li>
-          <li>Backend Development - Python/Django/FastAPI</li>
-          <li>Database in use - PostgreSQL, MongoDB, GraphQL</li>
-          <li>Environment - Docker, AWS</li>
-        </ul>
-        <br/>
-        <h4>Achievements</h4>
-        <ul>
-          <li>Successfully designed, implemented, documented,and supported internal testing.</li>
-        </ul>
+    <div class="card project">
+      <h3>Firmware / Device Testing Tools</h3>
+      <p class="project-meta">Merry Electronics (Singapore)<span class="sep">|</span>2022 – 2025</p>
+      <p>
+        Libraries and applications for testing, verifying and validating devices such as headsets, earbuds and PCBs.
+      </p>
+      <div class="tech-tags">
+        <span>C++</span><span>C#</span><span>DLLs</span><span>HID</span><span>UART</span><span>Custom device APIs</span>
+      </div>
+      <h4>Key contributions</h4>
+      <ul>
+        <li>Built C++ DLLs and C# applications that talk to devices over HID, UART and custom APIs.</li>
+        <li>Supported the people using the tools and extended them as new devices arrived.</li>
+      </ul>
+    </div>
+
+    <div class="card project">
+      <h3>Airport Resource Management System</h3>
+      <p class="project-meta">Amadeus GDS (UFIS Airport Solutions)<span class="sep">|</span>2012 – 2020<span class="sep">|</span>Dev team 10+</p>
+      <p>
+        A suite of applications for managing airport resources, both fixed and human. It covers seasonal staff rosters,
+        advance task planning for flights, and allocating check-in counters and baggage belts to flights.
+      </p>
+      <div class="tech-tags">
+        <span>C#</span><span>WPF</span><span>C++</span><span>Java</span><span>VB</span><span>AngularJS</span>
+        <span>Oracle</span><span>MS SQL Server</span><span>JBoss</span><span>IIS</span><span>Linux</span>
+      </div>
+      <h4>Key contributions</h4>
+      <ul>
+        <li>Developed C# / WPF and VB client applications and an AngularJS web front end.</li>
+        <li>Built backend components in C/C++ and Java on Oracle and MS SQL Server.</li>
+        <li>Analysed requirements with the functional and business analysts.</li>
+        <li>Supported the system in production at multiple airports over eight years.</li>
+      </ul>
+    </div>
+
+    <div class="card project">
+      <h3>Stock Filter</h3>
+      <p class="project-meta">IFIS Asia<span class="sep">|</span>2009 – 2012<span class="sep">|</span>Team of 5</p>
+      <p>
+        A web application and set of Windows services for financial market data from Thomson Reuters. Users filter stocks
+        by market, market capital, EPS and other criteria, and administrators define the report formats.
+      </p>
+      <div class="tech-tags">
+        <span>C#</span><span>ASP.NET</span><span>Windows services</span><span>JavaScript</span><span>XML</span><span>MS SQL Server</span>
+      </div>
+      <h4>Key contributions</h4>
+      <ul>
+        <li>Built C# Windows services that download Reuters market data as XML and load it into SQL Server.</li>
+        <li>Developed the ASP.NET site, including admin tools to add, update and remove report formats.</li>
+        <li>Gathered requirements with clients, ran SIT and UAT, took the system live and supported it in production.</li>
+      </ul>
+    </div>
+
+    <div class="card project">
+      <h3>RKD Fundamental</h3>
+      <p class="project-meta">IFIS Asia<span class="sep">|</span>2009 – 2012<span class="sep">|</span>Team of 5</p>
+      <p>
+        A web application showing company fundamentals from the Reuters RKD data source, such as snapshot history and
+        financial ratios.
+      </p>
+      <div class="tech-tags">
+        <span>C#</span><span>ASP.NET</span><span>XSLT</span><span>Reuters RKD</span>
+      </div>
+      <h4>Key contributions</h4>
+      <ul>
+        <li>Retrieved fundamental data from Reuters RKD and rendered it with XSLT in ASP.NET.</li>
+        <li>Gathered requirements with clients, ran SIT and UAT, took the system live and supported it in production.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="recent">
+    <h2>Recent Work</h2>
+    <p class="section-intro">My current internship and Master's projects, built on cloud and modern web stacks.</p>
+
+    <div class="other-grid" style="margin-top: 15px;">
+      <div class="card project">
+        <h3>LabJOMS</h3>
+        <p class="project-meta">HauHau Research · 2026 – present</p>
+        <p>A laboratory job ordering and management system: facility booking, purchase requests, reimbursements and risk assessments. I'm handling the design, development and DevOps.</p>
+        <div class="tech-tags">
+          <span>PHP</span><span>Laravel</span><span>PostgreSQL</span><span>Apache</span><span>AWS EC2</span>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Firmware / Device Testing Tools</h3>
-        <p>
-          Creating DLLs and applications to test, verify, and validate the devices such as headsets, earbuds, PCB, etc. through HID, UART, and custom API.
-        </p>
-        <br/>
-        <h4>Responsibilities</h4>
-        <ul>
-          <li>Languages: C++, C#</li>
-        </ul>
-        <br/>
-        <h4>Achievements</h4>
-        <ul>
-          <li>Successfully developed libraries and tools. Testing and user support.</li>
-        </ul>
+      <div class="card project">
+        <h3>Smart Desk</h3>
+        <p class="project-meta">Yoobee College · Academic</p>
+        <p>A reading assistant that generates vocabulary and flashcards from what the user reads and recommends further reading.</p>
+        <div class="tech-tags">
+          <span>React</span><span>TypeScript</span><span>Django</span><span>PostgreSQL</span><span>AWS</span>
+        </div>
+        <button class="btn" onclick="openModal('Smart Desk')">View on GitHub</button>
       </div>
+
+      <div class="card project">
+        <h3>Car Rental System</h3>
+        <p class="project-meta">Yoobee College · Academic</p>
+        <p>A peer-to-peer car rental platform. I designed and built it, and deployed it end-to-end on Azure.</p>
+        <div class="tech-tags">
+          <span>React</span><span>Python</span><span>Azure Functions</span><span>Azure SQL</span>
+        </div>
+        <button class="btn" onclick="openModal('Car Rental System')">View on GitHub</button>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
